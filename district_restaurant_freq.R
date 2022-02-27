@@ -4,18 +4,18 @@ library(dplyr)
 library(treemap)
 
 
-ck <- read_excel("~/Downloads/chicken_restaurants.xlsx", encoding= "UTF-8")
+ck <- read_excel("~/Downloads/치킨집_가공.xlsx", encoding= "UTF-8")
 head(ck)
 
 addr <- substr(ck$소재지전체주소, 11, 16)
 head(addr)
 
-addr_num <- gsub("[0-9]", "", addr)  
-addr_trim <- gsub(" ", "", addr_num)
+addr_num <- gsub("[0-9]", "", addr) # 숫자제거 
+addr_trim <- gsub(" ", "", addr_num) #공백제거
 head(addr_trim)
 
 addr_count <- addr_trim %>%
-    table() %>%   
+    table() %>%   #도수분포표 생성
     data.frame()
 head(addr_count)
 
