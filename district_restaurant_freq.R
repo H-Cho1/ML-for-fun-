@@ -4,7 +4,7 @@ library(dplyr)
 library(treemap)
 
 
-ck <- read_excel("~/Downloads/치킨집_가공.xlsx", encoding= "UTF-8")
+ck <- read_excel("~/Downloads/chicken_restaurants.xlsx", encoding= "UTF-8")
 head(ck)
 
 addr <- substr(ck$소재지전체주소, 11, 16)
