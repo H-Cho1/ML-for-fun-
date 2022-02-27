@@ -10,12 +10,12 @@ head(ck)
 addr <- substr(ck$소재지전체주소, 11, 16)
 head(addr)
 
-addr_num <- gsub("[0-9]", "", addr) # 숫자제거 
-addr_trim <- gsub(" ", "", addr_num) #공백제거
+addr_num <- gsub("[0-9]", "", addr)  
+addr_trim <- gsub(" ", "", addr_num)
 head(addr_trim)
 
 addr_count <- addr_trim %>%
-    table() %>%   #도수분포표 생성
+    table() %>%   
     data.frame()
 head(addr_count)
 
